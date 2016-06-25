@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+   <head>
+      <!-- Basic Page Needs
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <meta charset="utf-8">
+      <title>Developer Courses</title>
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Mobile Specific Metas
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- FONT
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+      <!-- CSS
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+      <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+      <link rel="stylesheet" href="{% static 'css/skeleton.css' %}">
+      <!-- Favicon
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+      <!-- Scripts
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+      <script src="{% static 'js/landing-page-script.js' %}"></script> 
+      <script src="{% static 'js/script.js' %}"></script> 
+   </head>
+   <body>
+      <!-- Primary Page Layout
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <nav class="row animated fadeInDown">
+         <div id="logo" class="four columns" >
+            <a onclick="clickLandingPage()">Developer DashBoard</a>
+         </div>
+         <div id="nav-btns" class="eight columns">
+            <a id="btn2py">Python</a>
+            <a id="btn2droid">Android</a>
+            <a id="btn2front">FrontEnd Web</a>
+            <a align="right"class="btn2form ">Apply For the Course</a>
+         </div>
+      </nav>
+      <!-- Canvas
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <div id="canvas" >
+<button>Go to Top</button>
+      <!-- Firt Page
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<section id="first" class="landing" style="background: #FFF;">
+   <div class="container" >
+      <h1 class="animated fadeIn">Welcome to Developer Courses</h1>
+      <h5 class="animated fadeIn">3 Developer Courses for Beginners</h5>
+   </div>
+</section>
+<!-- FrontEnd Web Developement
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<section id="two" class="landing" >
+   <div class="container">
+      <div class="row">
+         <div class="six columns"><img class=" course-logo" src="{% static 'images/frontend.png' %}"></div>
+         <div class="six columns">
+            <h2 class="">FrontEnd Web Development</h2>
+            <p class="">Lorem ipsum dolor sit amet, vidit virtute interesset per ad. Eius errem interpretaris in eum. Semper integre ne nam, vel an officiis ullamcorper, vel dolor accumsan urbanitas in. Ad nemore hendrerit quo. Sed doming dicunt gloriatur an.
+            </p>
+            <a class="button btn2form">Apply for this Course</a>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Android Development
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<section id="three" class="landing" style="background: #FFF; ">
+   <div class="container">
+      <div class="row">
+         <div class="six columns"><img class="course-logo" src="{% static 'images/android.png' %}" style="max-width: 160px;"></div>
+         <div class="six columns">
+            <h2>Android Development</h2>
+            <p>Lorem ipsum dolor sit amet, vidit virtute interesset per ad. Eius errem interpretaris in eum. Semper integre ne nam, vel an officiis ullamcorper, vel dolor accumsan urbanitas in. Ad nemore hendrerit quo. Sed doming dicunt gloriatur an.
+            </p>
+            <a class="button btn2form">Apply for this Course</a>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Python
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<section id="four" class="landing" >
+   <div class="container">
+      <div class="row">
+         <div class="six columns"><img class="course-logo" src="{% static 'images/python.png' %}"></div>
+         <div class="six columns">
+            <h2>Python</h2>
+            <p>Lorem ipsum dolor sit amet, vidit virtute interesset per ad. Eius errem interpretaris in eum. Semper integre ne nam, vel an officiis ullamcorper, vel dolor accumsan urbanitas in. Ad nemore hendrerit quo. Sed doming dicunt gloriatur an.
+            </p>
+            <a class="button btn2form">Apply for this Course</a>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Certifications
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<section id="five" class="landing" style="background : #FFF">
+   <div style="max-width:90% !important; margin-left: auto; margin-right: auto;">
+      <h2>
+      Get Certified by International Communities</h1>
+      <hr>
+      <div class="row" align="center">
+         <div class="six columns grid-small" style="padding-top: 2em;"><img class="com-logo" src="{% static 'images/IEEE.png' %}"></div>
+         <div class="six columns grid-small" style="padding-top: 2em; margin-left: 1%"><img class="com-logo" src="{% static 'images/udacity.png' %}"></div>
+      </div>
+   </div>
+</section>
+
+<!-- Form
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<section id="form" class="landing" style="background: #FFF; ">
+   <div style="max-width:90% !important; margin-left: auto; margin-right: auto;">
+      <h2>Apply for the Course</h2>
+      <form action="." method="POST">
+      {% csrf_token %}
+         <div class="row">
+            <div class="six columns">
+               <div class="row">
+                  <div class="six columns">
+                     <label for="exampleEmailInput">First Name</label>
+                     <input name="f_name" required="required" class="u-full-width" type="text" placeholder="" id="firstName">
+                  </div>
+                  <div class="six columns">
+                     <label for="exampleEmailInput">Last Name</label>
+                     <input name="l_name" required="required" class="u-full-width" type="text" placeholder="" id="lastName">
+                  </div>
+               </div>
+            </div>
+            <div class="six columns">
+               <label for="exampleRecipientInput">Course you are applying for:</label>
+               <select required="required" name="course" class="u-full-width" id="exampleRecipientInput">
+                  <option value="Option 1">Android Developement</option>
+                  <option value="Option 2">FrontEnd Web Development</option>
+                  <option value="Option 3">Python</option>
+               </select>
+            </div>
+         </div>
+         <div class="row">
+            <div class="six columns">
+               <label for="exampleEmailInput">Email Id</label>
+               <input required="required" name="email" class="u-full-width" type="email" placeholder="email@mailbox.com" id="EmailID">
+            </div>
+            <div class="six columns ">
+               <div class="row">
+                  <div class="six columns">
+                     <label for="exampleEmailInput">VTU USN</label>
+                     <input required="required" name="usn" class="u-full-width" type="text" placeholder="1RN*****" id="USN">
+                  </div>
+                  <div class="six columns">
+                     <label for="exampleEmailInput">Mobile No.</label>
+                     <input required="required" name="mobile" class="u-full-width" type="tel" placeholder="+91 **********" id="Number">
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="six columns ">
+               <div class="row">
+                  <div class="six columns">
+                     <label for="exampleRecipientInput">College Year</label>
+                     <select required="required" name="year" class="u-full-width" id="exampleRecipientInput">
+                        <option value="Option 1">I</option>
+                        <option value="Option 2">II</option>
+                        <option value="Option 3">III</option>
+                        <option value="Option 4">IV</option>
+                     </select>
+                  </div>
+                  <div class="six columns">
+                     <label for="exampleRecipientInput">Branch</label>
+                     <select required="required" name="branch" class="u-full-width" id="exampleRecipientInput">
+                        <option value="Option 1">CS</option>
+                        <option value="Option 2">EEE</option>
+                        <option value="Option 3">IS</option>
+                        <option value="Option 4">IT</option>
+                        <option value="Option 5">ECE</option>
+                        <option value="Option 6">MECH</option>
+                        <option value="Option 7">CIVIL</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+               <input class="button-primary u-pull-right " type="submit" value="Submit">
+         </div>
+      </form>
+   </div>
+</section>
+
+
+      </div>
+      <!-- Footer
+         –––––––––––––––––––––––––––––––––––––––––––––––––– 
+         <div> 
+         <footer class="animated fadeInUp">
+           <div id="footer-content">© 2016 Copyright Utkarsh Bhimte. All right reserved.
+           </div>
+         </footer>
+         </div> -->
+      <!-- End Document
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   </body>
+</html>
