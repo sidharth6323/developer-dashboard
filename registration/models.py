@@ -6,6 +6,8 @@ from django.db import models
 class registration(models.Model):
 	f_name=models.CharField(max_length=50)
 	l_name=models.CharField(max_length=50)
+	gender=models.CharField(max_length=50)
+	github=models.CharField(max_length=50)
 	course=models.CharField(max_length=50)
 	email=models.CharField(max_length=50)
 	usn=models.CharField(max_length=50)
