@@ -105,7 +105,7 @@
 <section id="five" class="landing" style="background : #FFF">
    <div style="max-width:90% !important; margin-left: auto; margin-right: auto;">
       <h2>
-      Get Certified by International Communities</h1>
+      Get Certified by International Communities</h2>
       <hr>
       <div class="row" align="center">
          <div class="six columns grid-small" style="padding-top: 2em;"><img class="com-logo" src="{% static 'images/IEEE.png' %}"></div>
@@ -215,6 +215,7 @@
 
 
       </div>
+      
       <!-- Footer
          –––––––––––––––––––––––––––––––––––––––––––––––––– 
          <div> 
@@ -226,4 +227,12 @@
       <!-- End Document
          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
    </body>
+   <script>
+      $(document).ready(function()
+      {
+         {% if message %}
+         alert("{{message}}");
+         {%endif%}
+      });
+   </script>
 </html>

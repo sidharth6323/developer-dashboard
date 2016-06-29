@@ -8,6 +8,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APIClient
 import json
+from django.http import JsonResponse
 from django.contrib.auth.models import User
 
 def index(request):
@@ -17,7 +18,8 @@ def index(request):
 		client=APIClient()
 		client.credentials(HTTP_AUTHORIZATION="Token "+token.key)
 		client.post('/api/v1/register/', request.POST, format='json')
-	return render_to_response("index.html",{},RequestContext(request))
+		return render_to_response("index.html",{"message":"Successfully Registered!!"},RequestContext(request))
+	return render_to_response("index.html",{"message":""},RequestContext(request))
 
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
@@ -27,7 +29,7 @@ def register(request):
 		serializer=registrationSerializer(data=request.data)
 		if serializer.is_valid():
 			serializer.save()
-			return "registration successful"
+			return Response(serializer.errors)
 		print serializer.errors
-		return "Please fill all the forms appropriately"
-		#return Response(serializer.errors) 
+		#return "Please fill all the forms appropriately"
+		return Response(serializer.errors) 
