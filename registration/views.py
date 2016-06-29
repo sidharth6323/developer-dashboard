@@ -1,15 +1,33 @@
 from django.shortcuts import render,HttpResponse,render_to_response,HttpResponseRedirect,RequestContext
 from registration.models import registration
+from rest_framework.response import Response
+from rest_framework.decorators import api_view,permission_classes,authentication_classes
+from registration.serializers import registrationSerializer
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.authtoken.models import Token
+from rest_framework.test import APIClient
+import json
+from django.contrib.auth.models import User
 
 def index(request):
 	if request.method=="POST":
-		f_name=request.POST.get("f_name")
-		l_name=request.POST.get("l_name")
-		course=request.POST.get("course")
-		email=request.POST.get("email")
-		usn=request.POST.get("usn")
-		mobile=request.POST.get("mobile")
-		year=request.POST.get("year")
-		branch=request.POST.get("branch")
-		registration.objects.create(f_name=f_name,l_name=l_name,course=course,email=email,usn=usn,mobile=mobile,year=year,branch=branch,)
+		user=User.objects.get(pk=1)
+		token=Token.objects.get(user=user)
+		client=APIClient()
+		client.credentials(HTTP_AUTHORIZATION="Token "+token.key)
+		client.post('/api/v1/register/', request.POST, format='json')
 	return render_to_response("index.html",{},RequestContext(request))
+
+@api_view(['POST'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((IsAuthenticated,))
+def register(request):
+	if request.method=="POST":
+		serializer=registrationSerializer(data=request.data)
+		if serializer.is_valid():
+			serializer.save()
+			return "registration successful"
+		print serializer.errors
+		return "Please fill all the forms appropriately"
+		#return Response(serializer.errors) 

@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from registration.views import index
+from registration.views import index,register
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
+   	url(r'^api/v1/register/$', register),
 ]
