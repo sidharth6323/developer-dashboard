@@ -90,6 +90,18 @@ button {
 	opacity: 0;
 }
 
+#five img{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: filter .2s ease-in-out;
+    transition: -webkit-filter .2s ease-in-out;
+}
+
+#five img:hover{
+	-webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
+    filter: grayscale(0%);
+}
+
 .visible{
 	opacity: 1 !important;
 }
